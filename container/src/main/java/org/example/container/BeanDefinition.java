@@ -1,7 +1,9 @@
 package org.example.container;
 
-import java.lang.reflect.Method;
+import lombok.Value;
 
+import java.lang.reflect.Method;
+@Value
 public class BeanDefinition {
 
     String id;
