@@ -14,15 +14,18 @@ public class AnnotationBasedApplicationContext implements ApplicationContext{
 
     private String packageName;
     private final BeanDefinitionRegistry beanDefinitionRegistry;
+    private final BeanFactory beanFactory;
     public AnnotationBasedApplicationContext(Class baseClass){
         packageName = baseClass.getPackageName();
         beanDefinitionRegistry = new DefaultBeanDefinitionRegistry();
+        beanFactory = new DefaultBeanFactory(beanDefinitionRegistry);
         init();
     }
 
    private void init(){
         BeanDefinitionReader beanDefinitionReader = createBeanDefinitionReader();
         beanDefinitionReader.read().forEach(beanDefinitionRegistry::registerBeanDefinition);
+        beanDefinitionRegistry.getBeansIds().forEach(beanFactory::getBean);
    }
 
     private BeanDefinitionReader createBeanDefinitionReader() {
@@ -34,16 +37,16 @@ public class AnnotationBasedApplicationContext implements ApplicationContext{
 
     @Override
     public <T> List<T> getBeans(Class<T> tClass) {
-        return null;
+        return beanFactory.getBeans(tClass);
     }
 
     @Override
     public <T> T getBean(Class<T> tClass) {
-        return null;
+        return beanFactory.getBean(tClass);
     }
 
     @Override
     public Object getBean(String beanId) {
-        return null;
+        return beanFactory.getBean(beanId);
     }
 }

@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationBasedApplicationContext(Main.class);
         XService service = context.getBean(XService.class);
-
+        service.sendAll("hello");
 
     }
 }
