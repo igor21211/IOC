@@ -1,6 +1,6 @@
 package org.example.app;
 
-import org.example.container.Component;
+import org.example.container.annotations.Component;
 
 @Component
 public class XSender {

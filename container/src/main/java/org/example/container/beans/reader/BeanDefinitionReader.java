@@ -1,4 +1,6 @@
-package org.example.container;
+package org.example.container.beans.reader;
+
+import org.example.container.beans.BeanDefinition;
 
 import java.util.List;
 

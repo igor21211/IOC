@@ -1,4 +1,4 @@
-package org.example.container;
+package org.example.container.beans;
 
 import lombok.Value;
 

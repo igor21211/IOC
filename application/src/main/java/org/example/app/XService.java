@@ -1,7 +1,10 @@
 package org.example.app;
 
-import java.util.List;
+import lombok.AllArgsConstructor;
+import org.example.container.annotations.Configuration;
 
+import java.util.List;
+@AllArgsConstructor
 public class XService {
 
    private List<String> users;
