@@ -9,7 +9,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationBasedApplicationContext(Main.class);
-        List<Person> persons =  PersonRepository.getPersonByName("Igor");
-        persons.forEach(System.out::println);
+        Menu menu = context.getBean(Menu.class);
+        menu.start();
     }
 }

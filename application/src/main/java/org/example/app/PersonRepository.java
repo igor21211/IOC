@@ -21,7 +21,7 @@ public class PersonRepository {
         try {
             connection = DriverManager.getConnection(url, user, password);
             if (connection != null) {
-                System.out.println("Connected to the PostgreSQL server successfully.");
+                System.out.println("");
             } else {
                 System.out.println("Failed to make connection!");
             }
